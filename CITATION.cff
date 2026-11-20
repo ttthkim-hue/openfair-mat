@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use OpenFAIR-Mat in research or data workflows, please cite it using the metadata below."
+title: "OpenFAIR-Mat: Pre-Flight Physical-Integrity and RO-Crate 1.1 Validator for Scientific Datasets"
+version: "0.1.0"
+date-released: "2026-11-20"
+license: MIT
+repository-code: "https://github.com/ttthkim-hue/openfair-mat"
+url: "https://ttthkim-hue.github.io/openfair-mat/"
+authors:
+  - family-names: Kim
+    given-names: Tae-Hyung
+    orcid: "https://orcid.org/0009-0003-5047-7501"
+keywords:
+  - open-science
+  - fair-data
+  - ro-crate
+  - materials-informatics
+  - reproducibility
+  - cif
+  - poscar

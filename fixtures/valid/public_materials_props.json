@@ -1,0 +1,38 @@
+{
+  "dataset": "Public Textbook Reference Materials",
+  "records": [
+    {
+      "material_id": "mp-149",
+      "formula": "Si",
+      "band_gap_eV": 1.12,
+      "energy_unit": "eV",
+      "density_g_cm3": 2.329,
+      "temperature_K": 300.0,
+      "temp_unit": "K",
+      "lattice_a_A": 5.431,
+      "length_unit": "Å"
+    },
+    {
+      "material_id": "mp-1265",
+      "formula": "MgO",
+      "band_gap_eV": 7.8,
+      "energy_unit": "eV",
+      "density_g_cm3": 3.58,
+      "temperature_K": 300.0,
+      "temp_unit": "K",
+      "lattice_a_A": 4.212,
+      "length_unit": "Å"
+    },
+    {
+      "material_id": "mp-22862",
+      "formula": "NaCl",
+      "band_gap_eV": 8.5,
+      "energy_unit": "eV",
+      "density_g_cm3": 2.165,
+      "temperature_K": 300.0,
+      "temp_unit": "K",
+      "lattice_a_A": 5.64,
+      "length_unit": "Å"
+    }
+  ]
+}

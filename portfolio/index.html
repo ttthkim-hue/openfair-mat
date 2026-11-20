@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tae-Hyung Kim — Independent Researcher | Scientific AI &amp; Open Infrastructure</title>
+  <meta
+    name="description"
+    content="Independent Researcher portfolio of Tae-Hyung Kim: OpenFAIR-Mat CLI, Materials Informatics, Physical-AI Control, and International Challenge Track Record."
+  />
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-alt: #f1f5f9;
+      --ink: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --accent: #0f4c81;
+      --accent-soft: #e0f2fe;
+      --accent-ink: #075985;
+      --ok-bg: #dcfce7;
+      --ok-ink: #166534;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    code, pre {
+      font-family: var(--mono);
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    header.hero {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+      margin-bottom: 1.75rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-ink);
+      letter-spacing: 0.01em;
+    }
+
+    .badge.ok {
+      background: var(--ok-bg);
+      color: var(--ok-ink);
+    }
+
+    h1 {
+      margin: 0 0 0.35rem;
+      font-size: 2rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      margin: 0 0 1rem;
+      font-size: 1.06rem;
+      color: var(--muted);
+      max-width: 78ch;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.92rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+      gap: 0.9rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
+    }
+
+    .kpi-num {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.25;
+    }
+
+    .kpi-label {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin: 0 0 0.9rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--border);
+      letter-spacing: -0.01em;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem 1.3rem;
+    }
+
+    .card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.05rem;
+      color: var(--ink);
+    }
+
+    .card p {
+      margin: 0 0 0.7rem;
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+
+    .meta-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 0.89rem;
+      color: var(--ink);
+    }
+
+    .meta-list li {
+      margin-bottom: 0.3rem;
+    }
+
+    pre.cli-box {
+      margin: 0.75rem 0 0;
+      padding: 0.85rem 1rem;
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 8px;
+      font-size: 0.81rem;
+      overflow-x: auto;
+      line-height: 1.48;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.7rem 0.9rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--surface-alt);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .role-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.14rem 0.45rem;
+      border-radius: 6px;
+      background: var(--surface-alt);
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.84rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+      .container {
+        padding: 0;
+      }
+      header.hero, .card, .kpi-card {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div class="badge-row">
+        <span class="badge">Independent Researcher</span>
+        <span class="badge">Materials Science &times; Scientific AI</span>
+        <span class="badge ok">100% Open-Source &amp; Reproducible</span>
+      </div>
+      <h1>Tae-Hyung Kim</h1>
+      <p class="subtitle">
+        Independent Researcher working at the intersection of inorganic materials engineering, physical-integrity
+        scientific data infrastructure, and physics-informed control &amp; vision systems. Focused on deterministic
+        open-source verification tools and cross-domain benchmark execution using public datasets.
+      </p>
+      <div class="contact-bar">
+        <span><strong>Status:</strong> Independent Researcher (Republic of Korea)</span>
+        <span><strong>Email:</strong> <a href="mailto:ttthkim@gmail.com">ttthkim@gmail.com</a></span>
+        <span><strong>GitHub:</strong> <a href="https://github.com/ttthkim-hue/openfair-mat" rel="noopener">ttthkim-hue/openfair-mat</a></span>
+        <span><strong>ORCID:</strong> <a href="https://orcid.org/0009-0003-5047-7501" rel="noopener">0009-0003-5047-7501</a></span>
+        <span><strong>Education:</strong> M.S. in Materials Engineering (Pusan National Univ., 2025; KITECH industry-academia joint R&amp;D)</span>
+      </div>
+    </header>
+
+    <div class="kpi-grid" aria-label="Verified Metrics">
+      <div class="kpi-card">
+        <div class="kpi-num">14 Papers</div>
+        <div class="kpi-label">Peer-reviewed publications (7 first-author) indexed on ORCID</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">6 Filings</div>
+        <div class="kpi-label">Korean co-invented patents (1 granted: KR102996037B1)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">Public #1</div>
+        <div class="kpi-label">MVA2027 SMOTP4SB Track 2 peak rank (CodaBench 18323)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">90.65% Cov</div>
+        <div class="kpi-label">OpenFAIR-Mat v0.1.0 CLI (19/19 deterministic tests passing)</div>
+      </div>
+    </div>
+
+    <section id="open-source">
+      <h2>Selected Open-Source Engineering &amp; Research Projects</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>OpenFAIR-Mat v0.1.0 (MIT License)</h3>
+          <p>
+            Lightweight, zero-external-API pre-flight validator for federated materials and scientific datasets.
+            Detects broken crystal geometries, atom-count mismatches, non-finite values, impossible physics, and
+            mixed units before repository upload.
+          </p>
+          <ul class="meta-list">
+            <li><strong>Repository:</strong> <a href="https://github.com/ttthkim-hue/openfair-mat" rel="noopener">github.com/ttthkim-hue/openfair-mat</a></li>
+            <li><strong>Validators:</strong> CIF (metric tensor &amp; occupancy), VASP POSCAR (3&times;3 det volume &amp; counts), CSV/JSON (NaN/Inf, eV/meV, K/C, &Aring;/nm).</li>
+            <li><strong>Packaging:</strong> Auto-generates <code>RO-Crate 1.1</code> (<code>ro-crate-metadata.json</code>) &amp; SHA-256 <code>repro-manifest.json</code>.</li>
+            <li><strong>Schema Targets:</strong> Zenodo (CERN), NOMAD (FAIRmat), Materials Project readiness checks.</li>
+            <li><strong>Observed Verification:</strong> <code>19/19</code> pytest cases passing in <code>2.10s</code>; <code>90.65%</code> coverage; CLI exit <code>0</code> (valid) vs <code>1</code> (invalid).</li>
+          </ul>
+          <pre class="cli-box">$ openfair-check fixtures/valid -o out/
+Summary: PASS | files=4, passed=4, failed=0, errors=0, warnings=0
+Zenodo (CERN): READY | NOMAD (FAIRmat): READY | Materials Project: READY</pre>
+        </article>
+
+        <article class="card">
+          <h3>MVA2027 SMOTP4SB Track 2 — Small-Object Trajectory Prediction</h3>
+          <p>
+            International small-bird detection and future trajectory prediction challenge evaluated across 38
+            multi-frame test sequences on CodaBench (<a href="https://www.codabench.org/competitions/18323/" rel="noopener">Competition 18323</a>).
+          </p>
+          <ul class="meta-list">
+            <li><strong>Standing:</strong> Reached <strong>Public Test #1</strong> peak; verified Top-3 standing on active leaderboard (<code>SO-HOTA-TP</code> evaluation).</li>
+            <li><strong>Focus:</strong> Sub-pixel small-target association stability, motion-consistent trajectory forecasting, strict submission reproducibility.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>NeurIPS 2026 Smart Buildings Control Research</h3>
+          <p>
+            Independent open-source control research (<a href="https://www.kaggle.com/competitions/neurips-2026-smart-buildings" rel="noopener">Kaggle Competition</a>)
+            for zero-shot topology generalization across variable multi-zone commercial HVAC thermal-fluid environments.
+          </p>
+          <ul class="meta-list">
+            <li><strong>Architecture:</strong> Physics-informed hierarchical control combining online thermal-capacitance estimation, lookahead pre-conditioning, and enthalpy-balanced economizer logic.</li>
+            <li><strong>Objective:</strong> Simultaneous optimization of occupant thermal comfort, energy cost, and operational carbon regret using public simulator baselines.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>2023 PNU Convergence Creative Project (Principal Investigator)</h3>
+          <p>
+            Competitive graduate research microgrant (KRW 5,000,000) executed as Principal Investigator during
+            Master's research at Pusan National University.
+          </p>
+          <ul class="meta-list">
+            <li><strong>Scope:</strong> End-to-end experimental planning, microgrant budget allocation, and deliverable completion on schedule.</li>
+            <li><strong>Signal:</strong> Demonstrated high-ROI solo execution under lean microgrant constraints.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Representative Peer-Reviewed Publications (7 of 14 Indexed Works)</h2>
+      <p style="font-size:0.9rem; color:var(--muted); margin-top:0;">
+        Full verified record of 14 journal articles (7 first-author) is available at
+        <a href="https://orcid.org/0009-0003-5047-7501" rel="noopener">ORCID 0009-0003-5047-7501</a>.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Role</th>
+            <th>Title &amp; Journal</th>
+            <th>DOI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026</td>
+            <td><span class="role-tag">First Author (1/4)</span></td>
+            <td>Self-Powered Triboelectric Electrospun Air Filters as Functional Fibrous Materials: Experiment-Supported Modeling of Dielectrophoretic Capture and Scale-Up &mdash; <em>Materials Today Communications</em></td>
+            <td><a href="https://doi.org/10.1016/j.mtcomm.2026.115941" rel="noopener">10.1016/j.mtcomm.2026.115941</a></td>
+          </tr>
+          <tr>
+            <td>2026</td>
+            <td><span class="role-tag">Co-author (6/8)</span></td>
+            <td>Facile Etching Process for the Porous Structure of Hexagonal Boron Nitride as a Catalyst Support Using Metal Oxides Under Low-Temperature Conditions &mdash; <em>Catalysts</em></td>
+            <td><a href="https://doi.org/10.3390/catal16090837" rel="noopener">10.3390/catal16090837</a></td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td><span class="role-tag">First Author (1/2)</span></td>
+            <td>A Self-Powered Cationic Microfiber-Based Triboelectric Air Filter for High-Speed Particulate Matter Removal and Smart Monitoring &mdash; <em>Journal of Powder Materials</em></td>
+            <td><a href="https://doi.org/10.4150/jpm.2025.00465" rel="noopener">10.4150/jpm.2025.00465</a></td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td><span class="role-tag">First Author (1/9)</span></td>
+            <td>Rheology control of CO<sub>2</sub> curable ceramic powder for binder jetting &mdash; <em>Advanced Powder Technology</em></td>
+            <td><a href="https://doi.org/10.1016/j.apt.2024.104729" rel="noopener">10.1016/j.apt.2024.104729</a></td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td><span class="role-tag">First Author (1/4)</span></td>
+            <td>Production of Hydrated Lime for Flue Gas De-sulfurization via Dry Slaking Process &mdash; <em>Resources Recycling</em></td>
+            <td><a href="https://doi.org/10.7844/kirr.2025.34.1.33" rel="noopener">10.7844/kirr.2025.34.1.33</a></td>
+          </tr>
+          <tr>
+            <td>2024</td>
+            <td><span class="role-tag">Co-author (5/8)</span></td>
+            <td>Liquid Nitrogen Exfoliation and Nanodispersion of WS<sub>2</sub> for Thermocatalysts &mdash; <em>ACS Applied Materials &amp; Interfaces</em></td>
+            <td><a href="https://doi.org/10.1021/acsami.4c11888" rel="noopener">10.1021/acsami.4c11888</a></td>
+          </tr>
+          <tr>
+            <td>2024</td>
+            <td><span class="role-tag">First Author (1/8)</span></td>
+            <td>Influence of CaCO<sub>3</sub> on Density and Compressive Strength of Calcium Aluminate Cement-Based Cementitious Materials in Binder Jetting &mdash; <em>Materials</em></td>
+            <td><a href="https://doi.org/10.3390/ma17143463" rel="noopener">10.3390/ma17143463</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="patents">
+      <h2>Intellectual Property Summary (Publicly Disclosed Records)</h2>
+      <div class="card">
+        <p style="margin-bottom:0.4rem;">
+          Co-inventor on <strong>6 Korean patent filings</strong> covering functional powder formulations, binder-jetting
+          process compositions, and filtration media, including granted Korean patent
+          <strong><a href="https://patents.google.com/patent/KR102996037B1/ko" rel="noopener">KR102996037B1</a></strong>
+          (<em>CO<sub>2</sub>-fixing alumina-cement powder composition for 3D printing and preparation method thereof</em>, granted July 2026).
+        </p>
+        <p style="margin-bottom:0; font-size:0.85rem;">
+          All independent open-source software artifacts on this page use solely public textbook datasets and
+          zero confidential or unpublished institutional material.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <span>Tae-Hyung Kim &middot; Independent Researcher Portfolio</span>
+      <span>Offline-ready single HTML (0 external CDNs) &middot; Updated 2026-11-20</span>
+    </footer>
+  </div>
+</body>
+</html>

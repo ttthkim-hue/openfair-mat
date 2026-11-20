@@ -1,0 +1,25 @@
+{
+  "dataset": "Corrupted Property Table Sample",
+  "records": [
+    {
+      "material_id": "mp-149",
+      "formula": "Si",
+      "band_gap": 1.12,
+      "energy_unit": "eV",
+      "density_g_cm3": 2.329,
+      "temperature_K": -10.0,
+      "bulk_modulus_GPa": -45.0,
+      "length_unit": "Å"
+    },
+    {
+      "material_id": "mp-1265",
+      "formula": "MgO",
+      "band_gap": NaN,
+      "energy_unit": "meV",
+      "density_g_cm3": -1.2,
+      "temperature_K": 300.0,
+      "bulk_modulus_GPa": Infinity,
+      "length_unit": "nm"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+.DS_Store
+Thumbs.db
+ro-crate-metadata.json
+repro-manifest.json
+outputs/
+grants/
+README_KR.md

@@ -1,0 +1,6 @@
+material_id,formula,space_group,band_gap_eV,energy_unit,density_g_cm3,temperature_K,temp_unit,lattice_a_A,length_unit,bulk_modulus_GPa
+mp-149,Si,Fd-3m,1.12,eV,2.329,300.0,K,5.431,Å,98.0
+mp-1265,MgO,Fm-3m,7.80,eV,3.580,300.0,K,4.212,Å,160.0
+mp-1143,Al2O3,R-3c,8.80,eV,3.987,300.0,K,4.760,Å,254.0
+mp-22862,NaCl,Fm-3m,8.50,eV,2.165,300.0,K,5.640,Å,24.4
+mp-390,TiO2,I4_1/amd,3.20,eV,3.894,300.0,K,3.785,Å,178.0

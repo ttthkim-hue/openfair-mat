@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling>=1.21.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openfair-mat"
+version = "0.1.0"
+description = "Lightweight physical-integrity, schema, and RO-Crate reproducibility validator for federated scientific and materials datasets."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+  { name = "Tae-Hyung Kim", email = "ttthkim@gmail.com" },
+]
+keywords = [
+  "open-science",
+  "fair-data",
+  "ro-crate",
+  "materials-informatics",
+  "cif",
+  "poscar",
+  "reproducibility",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Chemistry",
+  "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+  "pytest-cov>=5.0.0",
+]
+
+[project.scripts]
+openfair-check = "openfair_mat.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ttthkim-hue/openfair-mat"
+Portfolio = "https://ttthkim-hue.github.io/openfair-mat/"
+Issues = "https://github.com/ttthkim-hue/openfair-mat/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/openfair_mat"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.coverage.run]
+source = ["openfair_mat"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 85

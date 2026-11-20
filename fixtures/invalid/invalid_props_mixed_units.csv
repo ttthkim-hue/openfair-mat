@@ -1,0 +1,5 @@
+material_id,formula,band_gap,energy_unit,density_g_cm3,temperature,temp_unit,lattice_a,length_unit
+mp-149,Si,1.12,eV,2.329,300.0,K,5.431,Å
+mp-1265,MgO,7800,meV,-3.580,26.85,C,0.4212,nm
+mp-1143,Al2O3,-0.85,eV,NaN,-15.0,K,4.760,Å
+mp-22862,NaCl,inf,eV,2.165,300.0,K,5.640,Å
