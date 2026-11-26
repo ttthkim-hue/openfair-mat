@@ -1,6 +1,6 @@
 # AI Usage & Transparency Disclosure (`OpenFAIR-Mat` v0.1.0)
 
-This disclosure follows open-science software transparency best practices and **NLnet Foundation AI transparency guidelines**.
+This disclosure follows open-science software transparency and provenance best practices.
 
 ## 1. Software Engineering & Repository Code (`OpenFAIR-Mat`)
 - **Runtime Guarantee (Zero AI Dependency):** The `openfair-mat` package (`src/openfair_mat/`) and `openfair-check` CLI execute **100% deterministically on CPU** using the Python standard library only. No LLM, generative AI model, neural network, or external paid API is called during dataset validation, SHA-256 hashing, or RO-Crate generation.
